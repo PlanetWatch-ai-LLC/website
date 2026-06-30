@@ -21,7 +21,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="inline-block bg-white rounded-xl px-4 py-3 mb-5">
               <img
-                src="/create-a-new-version-with-the-logo-on-the-left-and.png"
+                src="transparent-long.png"
                 alt="PlanetWatch.ai"
                 className="h-12 w-auto"
               />
