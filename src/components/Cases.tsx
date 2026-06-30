@@ -4,28 +4,28 @@ const cases = [
     title: 'PTZ System: Autonomous 24/7 Avifaune Surveillance',
     text: 'A fully autonomous pan-tilt-zoom surveillance system running 100% on edge computing — detecting and tracking birds around the clock without cloud dependency.',
     image:
-      'https://images.pexels.com/photos/16015461/pexels-photo-16015461.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'pexels-16015461.jpg',
   },
   {
     tag: 'Agricultural Curtailment',
     title: 'Agricultural Curtailment Module',
     text: 'An innovative module that detects farming activity in real time to manage collision risk for necrophagous and granivorous birds near rural wind farms.',
     image:
-      'https://images.pexels.com/photos/1112080/pexels-photo-1112080.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'pexels-1112080.jpg',
   },
   {
     tag: 'Benchmark Study',
     title: 'Avian Detection System Comparison in a Wind Farm',
     text: 'In a southern France wind farm, we tested multiple AI algorithms in real time to reduce false positives and improve reactivity — protecting birds while keeping the park efficient.',
     image:
-      'https://images.pexels.com/photos/414837/pexels-photo-414837.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'pexels-414837.jpg',
   },
   {
     tag: 'Protected Species',
     title: 'Black Stork Environmental Study',
     text: 'Using AI and real-time trajectory analysis, we detected black storks, mapped collision risk zones, and optimized turbine placement to meet strict environmental requirements.',
     image:
-      'https://images.pexels.com/photos/1661179/pexels-photo-1661179.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'pexels-1661179.jpg',
   },
 ];
 

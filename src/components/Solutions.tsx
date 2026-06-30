@@ -13,21 +13,21 @@ const solutions = [
     title: 'Offshore Wind',
     text: 'Monitor seabirds and marine life around offshore installations with computer vision tuned for harsh, remote environments.',
     image:
-      'https://images.pexels.com/photos/9186/energy-wind-power-plant.jpg?auto=compress&cs=tinysrgb&w=800',
+      'pexels-9186.jpg',
   },
   {
     icon: Droplets,
     title: 'Hydropower',
     text: 'Track migratory fish trajectories near dams and intakes. Inform safe passage strategies and meet environmental flow requirements.',
     image:
-      'https://images.pexels.com/photos/162568/pexels-photo-162568.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'pexels-162568.jpg',
   },
   {
     icon: Leaf,
     title: 'Solar & Mixed Sites',
     text: 'Detect necrophagous and granivorous species attracted by agricultural work, and adapt mitigation in real time across mixed-use sites.',
     image:
-      'https://images.pexels.com/photos/371900/pexels-photo-371900.jpeg?auto=compress&cs=tinysrgb&w=800',
+      'pexels-371900.jpg',
   },
 ];
 
