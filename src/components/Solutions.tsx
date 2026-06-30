@@ -13,14 +13,14 @@ const solutions = [
     title: 'Offshore Wind',
     text: 'Monitor seabirds and marine life around offshore installations with computer vision tuned for harsh, remote environments.',
     image:
-      'pexels-9186.jpg',
+      'pexels-cameramanic-35007721.jpg',
   },
   {
     icon: Droplets,
     title: 'Hydropower',
     text: 'Track migratory fish trajectories near dams and intakes. Inform safe passage strategies and meet environmental flow requirements.',
     image:
-      'pexels-162568.jpg',
+      'pexels-quang-nguyen-vinh-222549-12386741.jpg',
   },
   {
     icon: Leaf,
