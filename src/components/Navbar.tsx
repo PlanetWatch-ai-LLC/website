@@ -28,9 +28,9 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
         <a href="#" className="flex items-center gap-3">
           <img
-            src="/create-a-new-version-with-the-logo-on-the-left-and.png"
+            src="transparent-long.png"
             alt="PlanetWatch.ai"
-            className="h-42 w-auto"
+            className="h-10 w-auto"
           />
         </a>
 
