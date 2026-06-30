@@ -30,7 +30,7 @@ export default function Navbar() {
           <img
             src="transparent-long.png"
             alt="PlanetWatch.ai"
-            className="h-15 w-auto"
+            className="h-12 w-auto"
           />
         </a>
 
