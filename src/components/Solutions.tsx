@@ -6,7 +6,7 @@ const solutions = [
     title: 'Onshore Wind',
     text: 'Autonomous avifaune surveillance 24/7 with edge computing. Reduce collision risk and unnecessary curtailment while protecting birds and bats.',
     image:
-      'https://images.pexels.com/photos/9188/energy-wind-power-plant-7380.jpg?auto=compress&cs=tinysrgb&w=800',
+      'pexels-alfomedeiros-15268778.jpg',
   },
   {
     icon: Waves,
