@@ -25,7 +25,7 @@ export default function Contact() {
               Tell us about your site and your species of concern. Our team will
               get back to you within 48 hours to scope a tailored demonstration.
             </p>
-
+          </div>
 
           <form
             onSubmit={handleSubmit}
