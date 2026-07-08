@@ -26,46 +26,6 @@ export default function Contact() {
               get back to you within 48 hours to scope a tailored demonstration.
             </p>
 
-            <div className="space-y-5">
-              <div className="flex items-center gap-4">
-                <div className="w-11 h-11 rounded-xl bg-[#03A9F4]/10 flex items-center justify-center">
-                  <Mail size={20} className="text-[#03A9F4]" />
-                </div>
-                <div>
-                  <p className="text-sm text-[#6B7280]">Email</p>
-                  <a
-                    href="mailto:hello@planetwatch.ai"
-                    className="text-[#1F2937] font-semibold hover:text-[#03A9F4] transition-colors"
-                  >
-                    hello@planetwatch.ai
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-11 h-11 rounded-xl bg-[#8BC34A]/10 flex items-center justify-center">
-                  <Phone size={20} className="text-[#8BC34A]" />
-                </div>
-                <div>
-                  <p className="text-sm text-[#6B7280]">Phone</p>
-                  <a
-                    href="tel:+33661455762"
-                    className="text-[#1F2937] font-semibold hover:text-[#8BC34A] transition-colors"
-                  >
-                    +33 6 61 45 57 62
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-11 h-11 rounded-xl bg-[#34C759]/10 flex items-center justify-center">
-                  <MapPin size={20} className="text-[#34C759]" />
-                </div>
-                <div>
-                  <p className="text-sm text-[#6B7280]">Location</p>
-                  <p className="text-[#1F2937] font-semibold">France & Europe</p>
-                </div>
-              </div>
-            </div>
-          </div>
 
           <form
             onSubmit={handleSubmit}

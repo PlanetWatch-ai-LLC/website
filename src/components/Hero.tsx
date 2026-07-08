@@ -6,7 +6,7 @@ export default function Hero() {
       {/* Light background image */}
       <div className="absolute inset-0 z-0">
         <img
-          src="pexels-9188.jpg"
+          src="pexels-16015461.jpg"
           alt="Wind farm under a bright sky"
           className="w-full h-full object-cover"
         />
