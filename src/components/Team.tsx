@@ -4,19 +4,19 @@ const TEAM_MEMBERS = [
   {
     name: 'Iulian Naidin',
     role: 'CEO',
-    bio: "Leads PlanetWatch's strategy and growth, bridging renewable energy operators with the technology that protects the ecosystems around their sites.",
+    bio: "Founder of AViA SYSTEM and its FAUNiA biodiversity platform, and 20-year President of OS System, an IT infrastructure and security firm. 17+ years building software and security products before founding PlanetWatch's biodiversity-tech vision.",
     photo: 'team-iulian-naidin.jpg',
   },
   {
     name: 'Claude-Jacques Tronquet',
     role: 'CTO',
-    bio: "Architects PlanetWatch's computer vision and edge-computing platform, turning real-time detection into actionable, field-ready systems.",
+    bio: "20+ years scaling technology from European deep-tech to US enterprise — built StickyAdsTV's infrastructure to 10B+ daily requests across 12 data centers before its FreeWheel acquisition. Now architects BirdDetect, PlanetWatch's patent-pending, multisensor AI detection system running on NVIDIA Jetson edge hardware.",
     photo: 'team-claude-jacques-tronquet.jpg',
   },
   {
     name: 'Jill Abelson',
     role: 'CMO',
-    bio: 'Shapes how PlanetWatch tells its story to operators, regulators, and partners — translating deep tech into a clear market message.',
+    bio: "25+ years in strategic communications across the U.S. and France — recent work for NextEra Energy, the Environmental Defense Fund, and Nestlé, with roots at the U.S. EPA's Energy Star program and Greenpeace's early Arctic climate expeditions.",
     photo: 'team-jill-abelson.jpg',
   },
 ];
