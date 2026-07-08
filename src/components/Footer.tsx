@@ -1,15 +1,31 @@
 const cols = [
   {
     title: 'Solutions',
-    links: ['Onshore Wind', 'Offshore Wind', 'Hydropower', 'Solar & Mixed Sites'],
+    links: [
+      { label: 'Onshore Wind', href: '#solutions' },
+      { label: 'Offshore Wind', href: '#solutions' },
+      { label: 'Hydropower', href: '#solutions' },
+      { label: 'Solar & Mixed Sites', href: '#solutions' },
+    ],
   },
   {
     title: 'Company',
-    links: ['About', 'Case Studies', 'Careers', 'Press'],
+    links: [
+      { label: 'About / Team', href: '#team' },
+      { label: 'Case Studies', href: '#cases' },
+      { label: 'Investors', href: '#investors' },
+      { label: 'Careers', href: '#' },
+      { label: 'Press', href: '#' },
+    ],
   },
   {
     title: 'Resources',
-    links: ['Documentation', 'API Reference', 'Regulatory Guides', 'Support'],
+    links: [
+      { label: 'Documentation', href: '#' },
+      { label: 'API Reference', href: '#' },
+      { label: 'Regulatory Guides', href: '#' },
+      { label: 'Support', href: '#contact' },
+    ],
   },
 ];
 
@@ -36,12 +52,12 @@ export default function Footer() {
               <h4 className="text-white font-semibold mb-4 text-sm">{c.title}</h4>
               <ul className="space-y-3">
                 {c.links.map((l) => (
-                  <li key={l}>
+                  <li key={l.label}>
                     <a
-                      href="#"
+                      href={l.href}
                       className="text-sm hover:text-[#03A9F4] transition-colors"
                     >
-                      {l}
+                      {l.label}
                     </a>
                   </li>
                 ))}

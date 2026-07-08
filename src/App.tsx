@@ -4,7 +4,9 @@ import Why from './components/Why';
 import How from './components/How';
 import Solutions from './components/Solutions';
 import Cases from './components/Cases';
-import Testimonials from './components/Testimonials';
+import Team from './components/Team';
+import Investors from './components/Investors';
+import PilotProgram from './components/PilotProgram';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -18,7 +20,9 @@ function App() {
         <How />
         <Solutions />
         <Cases />
-        <Testimonials />
+        <Team />
+        <Investors />
+        <PilotProgram />
         <Contact />
       </main>
       <Footer />

@@ -1,3 +1,5 @@
+import { Quote } from 'lucide-react';
+
 const cases = [
   {
     tag: 'Edge Computing',
@@ -27,7 +29,14 @@ const cases = [
     image:
       'pexels-1661179.jpg',
   },
-];
+] satisfies {
+  tag: string;
+  title: string;
+  text: string;
+  image: string;
+  metric?: string;
+  quote?: { text: string; author: string };
+}[];
 
 export default function Cases() {
   return (
@@ -35,10 +44,10 @@ export default function Cases() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-3xl mb-16">
           <p className="text-[#8BC34A] font-semibold text-sm uppercase tracking-widest mb-3">
-            Case Studies
+            Traction &amp; Results
           </p>
           <h2 className="text-3xl lg:text-4xl font-bold text-[#1F2937] leading-tight mb-5">
-            Real projects, measurable impact
+            Real projects, quantified impact
           </h2>
           <p className="text-lg text-[#6B7280] leading-relaxed">
             A passionate team combining AI expertise with ecological commitment
@@ -61,12 +70,30 @@ export default function Cases() {
                 <span className="absolute top-4 left-4 bg-[#03A9F4] text-white text-xs font-semibold px-3 py-1.5 rounded-full">
                   {c.tag}
                 </span>
+                {c.metric && (
+                  <span className="absolute top-4 right-4 bg-[#34C759] text-white text-xs font-semibold px-3 py-1.5 rounded-full">
+                    {c.metric}
+                  </span>
+                )}
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-[#1F2937] mb-3 group-hover:text-[#03A9F4] transition-colors">
                   {c.title}
                 </h3>
                 <p className="text-[#6B7280] leading-relaxed">{c.text}</p>
+                {c.quote && (
+                  <div className="mt-5 pt-5 border-t border-gray-100 flex gap-3">
+                    <Quote className="text-[#03A9F4] shrink-0" size={20} />
+                    <div>
+                      <p className="text-[#1F2937] italic leading-relaxed">
+                        "{c.quote.text}"
+                      </p>
+                      <p className="text-sm text-[#6B7280] mt-2">
+                        {c.quote.author}
+                      </p>
+                    </div>
+                  </div>
+                )}
               </div>
             </article>
           ))}
