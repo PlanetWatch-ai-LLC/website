@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import Button from './ui/Button';
 
 const links = [
   { label: 'Why PlanetWatch', href: '#why' },
@@ -41,17 +42,14 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium text-[#1F2937] hover:text-[#03A9F4] transition-colors duration-200"
+              className="text-sm font-medium text-ink hover:text-primary transition-colors duration-200"
             >
               {l.label}
             </a>
           ))}
-          <a
-            href="#contact"
-            className="bg-[#03A9F4] text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-[#0292d1] transition-colors duration-200"
-          >
+          <Button href="#contact" size="sm">
             Request a Demo
-          </a>
+          </Button>
         </nav>
 
         <button
@@ -59,7 +57,7 @@ export default function Navbar() {
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
-          {open ? <X className="text-[#1F2937]" size={24} /> : <Menu className="text-[#1F2937]" size={24} />}
+          {open ? <X className="text-ink" size={24} /> : <Menu className="text-ink" size={24} />}
         </button>
       </div>
 
@@ -69,19 +67,15 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="text-[#1F2937] font-medium text-sm hover:text-[#03A9F4] transition-colors"
+              className="text-ink font-medium text-sm hover:text-primary transition-colors"
               onClick={() => setOpen(false)}
             >
               {l.label}
             </a>
           ))}
-          <a
-            href="#contact"
-            className="bg-[#03A9F4] text-white text-sm font-semibold px-5 py-2.5 rounded-full text-center hover:bg-[#0292d1] transition-colors"
-            onClick={() => setOpen(false)}
-          >
+          <Button href="#contact" size="sm" className="text-center" onClick={() => setOpen(false)}>
             Request a Demo
-          </a>
+          </Button>
         </div>
       )}
     </header>

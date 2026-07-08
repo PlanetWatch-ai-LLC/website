@@ -1,4 +1,7 @@
 import { Quote } from 'lucide-react';
+import SectionHeader from './ui/SectionHeader';
+import Card from './ui/Card';
+import { COLORS } from '../theme';
 
 const testimonials = [
   {
@@ -23,31 +26,26 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 lg:py-32 bg-[#0a1628] relative overflow-hidden">
+    <section className="py-24 lg:py-32 bg-navy relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-10"
         style={{
           backgroundImage:
-            'radial-gradient(circle at 20% 30%, #03A9F4 0%, transparent 40%), radial-gradient(circle at 80% 70%, #8BC34A 0%, transparent 40%)',
+            `radial-gradient(circle at 20% 30%, ${COLORS.primary} 0%, transparent 40%), radial-gradient(circle at 80% 70%, ${COLORS.moss} 0%, transparent 40%)`,
         }}
       />
       <div className="relative max-w-7xl mx-auto px-6">
-        <div className="max-w-3xl mb-16">
-          <p className="text-[#8BC34A] font-semibold text-sm uppercase tracking-widest mb-3">
-            Trusted by Operators
-          </p>
-          <h2 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
-            What our partners say
-          </h2>
-        </div>
+        <SectionHeader
+          eyebrow="Trusted by Operators"
+          eyebrowColor="moss"
+          dark
+          heading="What our partners say"
+        />
 
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((t) => (
-            <div
-              key={t.author}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors duration-300"
-            >
-              <Quote className="text-[#03A9F4] mb-5" size={36} />
+            <Card key={t.author} variant="dark" hover="glow">
+              <Quote className="text-primary mb-5" size={36} />
               <p className="text-gray-200 leading-relaxed mb-6 italic">
                 "{t.quote}"
               </p>
@@ -55,7 +53,7 @@ export default function Testimonials() {
                 <p className="font-semibold text-white">{t.author}</p>
                 <p className="text-sm text-gray-400 mt-1">{t.org}</p>
               </div>
-            </div>
+            </Card>
           ))}
         </div>
       </div>

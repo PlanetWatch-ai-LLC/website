@@ -1,4 +1,8 @@
 import { TrendingUp, Globe2, Users } from 'lucide-react';
+import SectionHeader from './ui/SectionHeader';
+import Card from './ui/Card';
+import Button from './ui/Button';
+import { COLORS } from '../theme';
 
 const INVESTOR_STATS = [
   { value: '$543B', label: 'Global wind energy market by 2034, up from $174B in 2024' },
@@ -26,34 +30,27 @@ const VISION_POINTS = [
 
 export default function Investors() {
   return (
-    <section id="investors" className="py-24 lg:py-32 bg-[#0a1628] relative overflow-hidden">
+    <section id="investors" className="py-24 lg:py-32 bg-navy relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-10"
         style={{
           backgroundImage:
-            'radial-gradient(circle at 20% 30%, #03A9F4 0%, transparent 40%), radial-gradient(circle at 80% 70%, #8BC34A 0%, transparent 40%)',
+            `radial-gradient(circle at 20% 30%, ${COLORS.primary} 0%, transparent 40%), radial-gradient(circle at 80% 70%, ${COLORS.moss} 0%, transparent 40%)`,
         }}
       />
       <div className="relative max-w-7xl mx-auto px-6">
-        <div className="max-w-3xl mb-16">
-          <p className="text-[#8BC34A] font-semibold text-sm uppercase tracking-widest mb-3">
-            For Investors
-          </p>
-          <h2 className="text-3xl lg:text-4xl font-bold text-white leading-tight mb-5">
-            Investing in the future of renewable energy compliance
-          </h2>
-          <p className="text-lg text-gray-300 leading-relaxed">
-            PlanetWatch sits at the intersection of two accelerating markets —
-            renewable energy deployment and environmental compliance — with a
-            patent-pending detection platform already running in the field
-            and a strategic environmental partnership with Calidris.
-          </p>
-        </div>
+        <SectionHeader
+          eyebrow="For Investors"
+          eyebrowColor="moss"
+          dark
+          heading="Investing in the future of renewable energy compliance"
+          description="PlanetWatch sits at the intersection of two accelerating markets — renewable energy deployment and environmental compliance — with a patent-pending detection platform already running in the field and a strategic environmental partnership with Calidris."
+        />
 
         <div className="flex flex-wrap gap-x-12 gap-y-6 mb-16 pb-16 border-b border-white/10">
           {INVESTOR_STATS.map((s) => (
             <div key={s.label} className="max-w-[220px]">
-              <p className="text-3xl font-bold text-[#03A9F4]">{s.value}</p>
+              <p className="text-3xl font-bold text-primary">{s.value}</p>
               <p className="text-sm text-gray-400 mt-1">{s.label}</p>
             </div>
           ))}
@@ -63,18 +60,15 @@ export default function Investors() {
           {VISION_POINTS.map((point) => {
             const Icon = point.icon;
             return (
-              <div
-                key={point.title}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors duration-300"
-              >
-                <Icon className="text-[#03A9F4] mb-5" size={32} />
+              <Card key={point.title} variant="dark" hover="glow">
+                <Icon className="text-primary mb-5" size={32} />
                 <h3 className="text-lg font-bold text-white mb-3">
                   {point.title}
                 </h3>
                 <p className="text-gray-300 leading-relaxed text-sm">
                   {point.text}
                 </p>
-              </div>
+              </Card>
             );
           })}
         </div>
@@ -82,16 +76,11 @@ export default function Investors() {
         <div className="flex flex-wrap items-center gap-6">
           <a
             href="#team"
-            className="text-sm font-semibold text-white hover:text-[#03A9F4] transition-colors underline underline-offset-4"
+            className="text-sm font-semibold text-white hover:text-primary transition-colors underline underline-offset-4"
           >
             Meet the team behind PlanetWatch
           </a>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 bg-[#03A9F4] text-white font-semibold px-6 py-3 rounded-full hover:bg-[#0292d1] transition-colors duration-200"
-          >
-            Investor inquiries
-          </a>
+          <Button href="#contact">Investor inquiries</Button>
         </div>
       </div>
     </section>

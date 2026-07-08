@@ -31,7 +31,7 @@ const cols = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a1628] text-gray-400 pt-16 pb-8">
+    <footer className="bg-navy text-gray-400 pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
           <div className="lg:col-span-2">
@@ -55,7 +55,7 @@ export default function Footer() {
                   <li key={l.label}>
                     <a
                       href={l.href}
-                      className="text-sm hover:text-[#03A9F4] transition-colors"
+                      className="text-sm hover:text-primary transition-colors"
                     >
                       {l.label}
                     </a>
@@ -71,10 +71,10 @@ export default function Footer() {
             © {new Date().getFullYear()} PlanetWatch.ai — All rights reserved.
           </p>
           <div className="flex gap-6 text-sm">
-            <a href="#" className="hover:text-[#03A9F4] transition-colors">
+            <a href="#" className="hover:text-primary transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-[#03A9F4] transition-colors">
+            <a href="#" className="hover:text-primary transition-colors">
               Legal Notice
             </a>
           </div>

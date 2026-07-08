@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-[#F7F7F7] text-[#1F2937] antialiased scroll-smooth">
+    <div className="min-h-screen bg-surface text-ink antialiased scroll-smooth">
       <Navbar />
       <main>
         <Hero />
