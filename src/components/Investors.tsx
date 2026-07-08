@@ -1,9 +1,9 @@
 import { TrendingUp, Globe2, Users } from 'lucide-react';
 
 const INVESTOR_STATS = [
-  { value: '$XX B', label: 'Addressable market across wind, hydro & solar' },
-  { value: 'X', label: 'Pilot sites in active deployment' },
-  { value: 'X%', label: 'Target YoY growth' },
+  { value: '$543B', label: 'Global wind energy market by 2034, up from $174B in 2024' },
+  { value: '$250M', label: 'Bird detection system market by 2033, at 7.77% CAGR' },
+  { value: '20+', label: 'Units deployed in the field' },
 ];
 
 const VISION_POINTS = [
@@ -44,8 +44,9 @@ export default function Investors() {
           </h2>
           <p className="text-lg text-gray-300 leading-relaxed">
             PlanetWatch sits at the intersection of two accelerating markets —
-            renewable energy deployment and environmental compliance —
-            with a proven team and a technology already running in the field.
+            renewable energy deployment and environmental compliance — with a
+            patent-pending detection platform already running in the field
+            and a strategic environmental partnership with Calidris.
           </p>
         </div>
 

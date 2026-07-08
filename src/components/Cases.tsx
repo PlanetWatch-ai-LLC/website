@@ -7,6 +7,7 @@ const cases = [
     text: 'A fully autonomous pan-tilt-zoom surveillance system running 100% on edge computing — detecting and tracking birds around the clock without cloud dependency.',
     image:
       'pexels-16015461.jpg',
+    metric: '20+ units deployed',
   },
   {
     tag: 'Agricultural Curtailment',
@@ -50,8 +51,9 @@ export default function Cases() {
             Real projects, quantified impact
           </h2>
           <p className="text-lg text-[#6B7280] leading-relaxed">
-            A passionate team combining AI expertise with ecological commitment
-            for a harmonious coexistence between energy and biodiversity.
+            A passionate team combining AI expertise with ecological commitment,
+            backed by a strategic environmental partnership with Calidris, for a
+            harmonious coexistence between energy and biodiversity.
           </p>
         </div>
 

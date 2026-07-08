@@ -4,7 +4,7 @@ const steps = [
   {
     icon: ScanEye,
     title: 'Identify, Classify, Count',
-    text: 'Track populations of birds, bats, and migratory fish. Estimate abundance, evolution, and survival rates to inform new ecosystem preservation strategies.',
+    text: 'Detect birds, bats, and migratory fish from up to 6 miles away. Estimate abundance, evolution, and survival rates to inform new ecosystem preservation strategies.',
   },
   {
     icon: Brain,
@@ -19,7 +19,7 @@ const steps = [
   {
     icon: ShieldCheck,
     title: 'Prevent & Protect',
-    text: 'A simple, reliable, scalable solution to manage installations in harmony with surrounding ecosystems — and meet growing regulatory demands.',
+    text: 'A patent-pending visual deterrent integrates directly with SCADA to slow or stop turbines when needed — a simple, scalable way to meet growing regulatory demands.',
   },
 ];
 
