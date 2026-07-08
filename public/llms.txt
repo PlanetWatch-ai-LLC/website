@@ -1,0 +1,46 @@
+# PlanetWatch.ai
+
+> PlanetWatch.ai builds AI-powered biodiversity intelligence for renewable energy operators. Its computer-vision and deep-learning platform detects, classifies, and helps protect sensitive species — birds, bats, and migratory fish — around wind, solar, and hydropower installations, on land and at sea.
+
+Site: https://planetwatch.ai/
+
+## What it does
+
+- Detects and classifies birds, bats, and migratory fish from up to 6 miles away, estimating abundance, population trends, and survival rates.
+- Analyzes images, sound, and flight trajectories in real time to understand how energy installations affect local wildlife.
+- Reduces collision mortality and unnecessary emergency turbine shutdowns through predictive, data-driven curtailment.
+- Ships a patent-pending visual deterrent that integrates with SCADA to slow or stop turbines when a protected species is at risk.
+- Runs on NVIDIA Jetson edge hardware, so detection works even at remote sites without reliable connectivity.
+
+Reported figures: 99%+ detection accuracy, sub-1-second real-time response, 50+ species classified.
+
+## Solutions by site type (https://planetwatch.ai/#solutions)
+
+- Onshore Wind — autonomous 24/7 avifauna surveillance on edge computing, reducing collision risk and unnecessary curtailment.
+- Offshore Wind — computer vision tuned for harsh, remote environments to monitor seabirds and marine life.
+- Hydropower — tracks migratory fish trajectories near dams and intakes to inform safe-passage strategies.
+- Solar & Mixed Sites — detects necrophagous and granivorous species drawn by agricultural activity near mixed-use sites.
+
+## Traction (https://planetwatch.ai/#cases)
+
+- 20+ PTZ (pan-tilt-zoom) surveillance units deployed in the field, running fully on edge computing.
+- An agricultural curtailment module that detects farming activity in real time near rural wind farms.
+- A benchmark study comparing avian-detection AI algorithms at a wind farm in southern France.
+- A black stork environmental study using trajectory analysis to map collision risk and optimize turbine placement.
+- Strategic environmental partnership with Calidris.
+
+## Market (https://planetwatch.ai/#investors)
+
+- Global wind energy market projected at $543B by 2034, up from $174B in 2024.
+- Bird detection system market projected at $250M by 2033 (7.77% CAGR).
+
+## Team (https://planetwatch.ai/#team)
+
+- Iulian Naidin, CEO — founder of AViA SYSTEM and its FAUNiA biodiversity platform; 20-year president of OS System (IT infrastructure and security).
+- Claude-Jacques Tronquet, CTO — built StickyAdsTV's infrastructure to 10B+ daily requests before its FreeWheel acquisition; architects BirdDetect, PlanetWatch's patent-pending multisensor AI detection system.
+- Jill Abelson, CMO — strategic communications for NextEra Energy, the Environmental Defense Fund, and Nestlé, with roots at the U.S. EPA's Energy Star program and Greenpeace.
+
+## Contact
+
+- Operators and prospective pilot sites: https://planetwatch.ai/#contact
+- Investor inquiries: https://planetwatch.ai/#investors

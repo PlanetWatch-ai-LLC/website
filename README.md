@@ -2,4 +2,4 @@
 
 AI-powered biodiversity intelligence for renewable energy.
 
-**Live site:** https://planetwatch-ai-llc.github.io/website/
+**Live site:** https://planetwatch.ai/
