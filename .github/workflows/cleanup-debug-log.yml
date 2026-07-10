@@ -1,0 +1,13 @@
+name: Cleanup Debug Log (one-off)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete contact-debug.log from server
+        run: |
+          curl -sS --user "${{ secrets.OVH_SFTP_USERNAME }}:${{ secrets.OVH_SFTP_PASSWORD }}" -Q "-DELE www/contact-debug.log" "ftp://${{ secrets.OVH_SFTP_HOST }}:21/"
+          echo "Deleted."
