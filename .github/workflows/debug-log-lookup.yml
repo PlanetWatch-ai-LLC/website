@@ -7,9 +7,14 @@ jobs:
     steps:
       - name: List server dirs and fetch error_log if present
         run: |
-          echo "--- home listing ---"
-          curl -sS --user "${{ secrets.OVH_SFTP_USERNAME }}:${{ secrets.OVH_SFTP_PASSWORD }}" "ftp://${{ secrets.OVH_SFTP_HOST }}:21/home/"
-          echo "--- www listing ---"
-          curl -sS --user "${{ secrets.OVH_SFTP_USERNAME }}:${{ secrets.OVH_SFTP_PASSWORD }}" "ftp://${{ secrets.OVH_SFTP_HOST }}:21/www/"
+          USERPASS="${{ secrets.OVH_SFTP_USERNAME }}:${{ secrets.OVH_SFTP_PASSWORD }}"
+          HOST="${{ secrets.OVH_SFTP_HOST }}"
+          SUBDIR=$(curl -sS --user "$USERPASS" "ftp://$HOST:21/home/" | awk '{print $NF}' | grep -vE '^\.\.?$')
+          echo "--- home/<subdir> listing ---"
+          curl -sS --user "$USERPASS" "ftp://$HOST:21/home/$SUBDIR/"
+          echo "--- searching for log files recursively (depth-limited) ---"
+          for d in "" "logs/" "log/"; do
+            curl -sS --user "$USERPASS" "ftp://$HOST:21/home/$SUBDIR/$d" 2>/dev/null
+          done
           echo "--- www/error_log tail (if exists) ---"
-          curl -sS --user "${{ secrets.OVH_SFTP_USERNAME }}:${{ secrets.OVH_SFTP_PASSWORD }}" "ftp://${{ secrets.OVH_SFTP_HOST }}:21/www/error_log" | tail -20 || true
+          curl -sS --user "$USERPASS" "ftp://$HOST:21/www/error_log" 2>/dev/null | tail -20 || true
