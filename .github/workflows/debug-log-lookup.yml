@@ -1,0 +1,15 @@
+name: Debug Log Lookup
+on:
+  workflow_dispatch:
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: List server dirs and fetch error_log if present
+        run: |
+          echo "--- home listing ---"
+          curl -sS --user "${{ secrets.OVH_SFTP_USERNAME }}:${{ secrets.OVH_SFTP_PASSWORD }}" "ftp://${{ secrets.OVH_SFTP_HOST }}:21/home/"
+          echo "--- www listing ---"
+          curl -sS --user "${{ secrets.OVH_SFTP_USERNAME }}:${{ secrets.OVH_SFTP_PASSWORD }}" "ftp://${{ secrets.OVH_SFTP_HOST }}:21/www/"
+          echo "--- www/error_log tail (if exists) ---"
+          curl -sS --user "${{ secrets.OVH_SFTP_USERNAME }}:${{ secrets.OVH_SFTP_PASSWORD }}" "ftp://${{ secrets.OVH_SFTP_HOST }}:21/www/error_log" | tail -20 || true
