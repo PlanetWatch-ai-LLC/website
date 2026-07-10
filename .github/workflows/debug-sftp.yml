@@ -7,13 +7,9 @@ jobs:
   debug:
     runs-on: ubuntu-latest
     steps:
-      - name: Inspect remote SFTP layout
+      - name: Inspect remote FTP layout (port 21)
         run: |
-          sudo apt-get update -y && sudo apt-get install -y sshpass
-          {
-            echo "pwd"
-            echo "ls -la"
-            echo "ls -la www"
-            echo "ls -la ${{ secrets.OVH_REMOTE_PATH }}"
-          } > batch.txt
-          sshpass -p "${{ secrets.OVH_SFTP_PASSWORD }}" sftp -o StrictHostKeyChecking=no -P 22 -b batch.txt "${{ secrets.OVH_SFTP_USERNAME }}@${{ secrets.OVH_SFTP_HOST }}"
+          echo "--- root listing ---"
+          curl -sS --user "${{ secrets.OVH_SFTP_USERNAME }}:${{ secrets.OVH_SFTP_PASSWORD }}" "ftp://${{ secrets.OVH_SFTP_HOST }}:21/"
+          echo "--- www listing ---"
+          curl -sS --user "${{ secrets.OVH_SFTP_USERNAME }}:${{ secrets.OVH_SFTP_PASSWORD }}" "ftp://${{ secrets.OVH_SFTP_HOST }}:21/www/"
