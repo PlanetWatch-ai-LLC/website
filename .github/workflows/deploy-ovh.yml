@@ -14,14 +14,11 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      - uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - uses: Dylan700/sftp-upload-action@v1.2.3
         with:
           server: ${{ secrets.OVH_SFTP_HOST }}
           username: ${{ secrets.OVH_SFTP_USERNAME }}
           password: ${{ secrets.OVH_SFTP_PASSWORD }}
-          protocol: sftp
           port: 22
-          local-dir: dist/
-          server-dir: ${{ secrets.OVH_REMOTE_PATH }}/
-          exclude: |
-            **/contact-config.php
+          uploads: |
+            ./dist/ => ./${{ secrets.OVH_REMOTE_PATH }}/
