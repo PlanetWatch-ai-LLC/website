@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Send, CheckCircle2 } from 'lucide-react';
+import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import Button from './ui/Button';
 
 type Intent = 'operator' | 'investor';
@@ -17,14 +17,51 @@ const COPY: Record<Intent, { eyebrow: string; heading: string; text: string }> =
   },
 };
 
-export default function Contact() {
-  const [sent, setSent] = useState(false);
-  const [intent, setIntent] = useState<Intent>('operator');
+const INITIAL_FORM = {
+  firstName: '',
+  lastName: '',
+  email: '',
+  siteType: '',
+  message: '',
+  company: '', // honeypot — left empty by real users
+};
 
-  const handleSubmit = (e: React.FormEvent) => {
+type Status = 'idle' | 'submitting' | 'sent' | 'error';
+
+export default function Contact() {
+  const [intent, setIntent] = useState<Intent>('operator');
+  const [form, setForm] = useState(INITIAL_FORM);
+  const [status, setStatus] = useState<Status>('idle');
+  const [error, setError] = useState('');
+
+  const updateField = (field: keyof typeof INITIAL_FORM) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
+      setForm((prev) => ({ ...prev, [field]: e.target.value }));
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
+    setStatus('submitting');
+    setError('');
+
+    try {
+      const res = await fetch('/contact.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, intent }),
+      });
+      const data = await res.json();
+
+      if (!res.ok || !data.ok) {
+        throw new Error(data.error || 'Something went wrong. Please try again.');
+      }
+
+      setStatus('sent');
+      setForm(INITIAL_FORM);
+      setTimeout(() => setStatus('idle'), 4000);
+    } catch (err) {
+      setStatus('error');
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again.');
+    }
   };
 
   const copy = COPY[intent];
@@ -65,6 +102,16 @@ export default function Contact() {
                 </button>
               ))}
             </div>
+            <input
+              type="text"
+              name="company"
+              value={form.company}
+              onChange={updateField('company')}
+              tabIndex={-1}
+              autoComplete="off"
+              className="hidden"
+              aria-hidden="true"
+            />
             <div className="grid sm:grid-cols-2 gap-5 mb-5">
               <div>
                 <label className="block text-sm font-medium text-ink mb-2">
@@ -73,6 +120,8 @@ export default function Contact() {
                 <input
                   required
                   type="text"
+                  value={form.firstName}
+                  onChange={updateField('firstName')}
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                 />
               </div>
@@ -83,6 +132,8 @@ export default function Contact() {
                 <input
                   required
                   type="text"
+                  value={form.lastName}
+                  onChange={updateField('lastName')}
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
                 />
               </div>
@@ -94,6 +145,8 @@ export default function Contact() {
               <input
                 required
                 type="email"
+                value={form.email}
+                onChange={updateField('email')}
                 className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all"
               />
             </div>
@@ -104,6 +157,8 @@ export default function Contact() {
                 </label>
                 <select
                   required
+                  value={form.siteType}
+                  onChange={updateField('siteType')}
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white"
                 >
                   <option value="">Select…</option>
@@ -121,11 +176,19 @@ export default function Contact() {
               </label>
               <textarea
                 rows={4}
+                value={form.message}
+                onChange={updateField('message')}
                 className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all resize-none"
               />
             </div>
-            <Button type="submit" pill={false} fullWidth>
-              {sent ? (
+            {status === 'error' && (
+              <p className="flex items-center gap-2 text-sm text-red-600 mb-4">
+                <AlertCircle size={16} />
+                {error}
+              </p>
+            )}
+            <Button type="submit" pill={false} fullWidth disabled={status === 'submitting'}>
+              {status === 'sent' ? (
                 <>
                   <CheckCircle2 size={18} />
                   Message sent — we'll be in touch
@@ -133,7 +196,7 @@ export default function Contact() {
               ) : (
                 <>
                   <Send size={18} />
-                  Send message
+                  {status === 'submitting' ? 'Sending…' : 'Send message'}
                 </>
               )}
             </Button>
