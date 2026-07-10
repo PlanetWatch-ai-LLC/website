@@ -101,6 +101,7 @@ try {
     $mail->send();
     echo json_encode(['ok' => true]);
 } catch (PHPMailerException $e) {
+    error_log('Contact form mail error: ' . $mail->ErrorInfo);
     http_response_code(502);
     echo json_encode(['ok' => false, 'error' => "Could not send message. Please try again later."]);
 }
